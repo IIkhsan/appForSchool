@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7135A8F6E983B5DF23CA81FA /* Pods_AppForSchool.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4198C390635930B793D22108 /* Pods_AppForSchool.framework */; };
+		C065878420FD2C56002168F3 /* Lesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C065878320FD2C56002168F3 /* Lesson.swift */; };
 		C06FE05620FA6832001A768B /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06FE05520FA6832001A768B /* Profile.storyboard */; };
 		C07B135D20FA48A800B78E17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07B135C20FA48A800B78E17 /* AppDelegate.swift */; };
 		C07B136420FA48A900B78E17 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C07B136320FA48A900B78E17 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 		21668BC79111FB309C4E63FF /* Pods-AppForSchool.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppForSchool.release.xcconfig"; path = "Pods/Target Support Files/Pods-AppForSchool/Pods-AppForSchool.release.xcconfig"; sourceTree = "<group>"; };
 		2C0EF1ADFF193ABACD8379B4 /* Pods-AppForSchool.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AppForSchool.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AppForSchool/Pods-AppForSchool.debug.xcconfig"; sourceTree = "<group>"; };
 		4198C390635930B793D22108 /* Pods_AppForSchool.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AppForSchool.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C065878320FD2C56002168F3 /* Lesson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lesson.swift; sourceTree = "<group>"; };
 		C06FE05520FA6832001A768B /* Profile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
 		C07B135920FA48A800B78E17 /* AppForSchool.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppForSchool.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C07B135C20FA48A800B78E17 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 				C07B139B20FA4BA000B78E17 /* SignUp.swift */,
 				C07B139D20FA4BA000B78E17 /* Token.swift */,
 				C0902ABC20FB67FC0026FE76 /* School.swift */,
+				C065878320FD2C56002168F3 /* Lesson.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				C07B139920FA4B8F00B78E17 /* AuthorizationViewController.swift in Sources */,
 				C07B13A220FA4BB200B78E17 /* APIServices.swift in Sources */,
 				C0A3C31B20FBC41B0017C4FF /* AcceptTableViewCell.swift in Sources */,
+				C065878420FD2C56002168F3 /* Lesson.swift in Sources */,
 				C07B138A20FA4A6900B78E17 /* Date.swift in Sources */,
 				C0902ABF20FB696F0026FE76 /* SchoolsViewController.swift in Sources */,
 				C0A3C31720FBAACF0017C4FF /* TestsViewController.swift in Sources */,

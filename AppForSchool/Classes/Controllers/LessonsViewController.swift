@@ -11,12 +11,27 @@ import UIKit
 class LessonsViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
+    var schoolID : Int?
+    var lessons = [Lesson]()
+    lazy var service = APIServices()
+    
+
     var addButton: UIBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newLesson))
 
     override func viewDidLoad() {
         super.viewDidLoad()
         addButton.tintColor = .white
         navigationItem.rightBarButtonItem = addButton
+        var token = UserDefaults.standard.string(forKey: "token")
+        token = "HohPynyWQNjQsfcEYUf2dJKy"
+        service.getAllLessons(schoolID:  nil, authorization: token!) { (lessons, error) in
+            if let error = error {
+                self.presentAlert(withTitle: "Error", message: "\(error)")
+            } else {
+                self.lessons = lessons!
+                self.tableView.reloadData()
+            }
+        }
     }
     
     @objc func newLesson() {
@@ -28,13 +43,15 @@ class LessonsViewController: UIViewController {
 
 extension LessonsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return lessons.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-        cell.textLabel?.text = "Labeleee"
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: "cell")
+        cell.textLabel?.text = lessons[indexPath.row].name
+        cell.detailTextLabel?.text = lessons[indexPath.row].start_time
         cell.textLabel?.textColor = .white
+        cell.detailTextLabel?.textColor = .white
         cell.backgroundColor = .clear
         return cell
     }

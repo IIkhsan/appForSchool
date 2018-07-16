@@ -14,9 +14,31 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var lastNameLabel : UILabel!
     @IBOutlet weak var tableVIew : UITableView!
     
+    var addButton: UIBarButtonItem = UIBarButtonItem(title: "Logout", style: .done, target: self, action: #selector(logout))
+    lazy var services = APIServices()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableVIew.isEditing = true
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func logout() {
+        let token = UserDefaults.standard.string(forKey: "token")
+        services.logout(token: token!) { (status, error) in
+            if let error = error {
+                self.presentAlert(withTitle: "Error", message: "\(error)")
+            } else if status {
+                let domain = Bundle.main.bundleIdentifier!
+                UserDefaults.standard.removePersistentDomain(forName: domain)
+                UserDefaults.standard.synchronize()
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let vc = storyboard.instantiateInitialViewController()
+                self.present(vc!, animated: true, completion: nil)
+            }
+            
+        }
     }
 }
 

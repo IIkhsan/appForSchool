@@ -25,14 +25,15 @@ class RegistrationViewController: UIViewController {
     }
     
     @IBAction func tapToEnter(_ sender : Any) {
-        registrationUser(email: emailTextField.text!, password: passwordTextField.text!, replayPassword: replayPasswordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!)
+        registrationUser(email: emailTextField.text!, password: passwordTextField.text!, replayPassword: replayPasswordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, patronymic: "Otsosyn", userType: "teacher", schoolID: 1)
     }
     
-    func registrationUser(email: String, password: String, replayPassword: String, firstName: String, lastName: String) {
+    func registrationUser(email: String, password: String, replayPassword: String, firstName: String, lastName: String, patronymic: String, userType: String, schoolID: Int) {
         if checkPasswords(password: password, replayPassword: replayPassword) {
             if checkTextFields(email: email, firstName: firstName, lastName: lastName) {
-                services.signUp(email: email, password: password, firstName: firstName, lastName: lastName, userType: "teacher") { (token, error) in
+                services.signUp(email: email, password: password, firstName: firstName, lastName: lastName, userType: userType, patronymic: patronymic, schoolId: schoolID) { (token, error) in
                     if let error = error {
+                        print(error)
                         self.presentAlert(withTitle: "Error", message: "Please, replay your request")
                     }
                     UserDefaults.standard.set(token?.token, forKey: "token")

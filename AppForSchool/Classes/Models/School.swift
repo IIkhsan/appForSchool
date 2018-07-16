@@ -14,3 +14,7 @@ struct School : Codable {
     let created_at : String
     let updated_at : String
 }
+//"id": 1,
+//"name": "Test School",
+//"created_at": "2018-07-15T17:44:17.105Z",
+//"updated_at": "2018-07-15T17:44:17.105Z"

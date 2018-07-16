@@ -11,10 +11,16 @@ import UIKit
 class TestsViewController: UIViewController {
     
     @IBOutlet weak var tableView : UITableView!
+    var addButton: UIBarButtonItem = UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(saveTestResults))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.allowsSelection = false
+        addButton.tintColor = .white
+        navigationItem.rightBarButtonItem = addButton
+    }
+    
+    @objc func saveTestResults() {
         
     }
 
