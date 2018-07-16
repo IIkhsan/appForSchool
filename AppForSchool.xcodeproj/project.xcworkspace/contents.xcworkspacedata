@@ -2,6 +2,46 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Date.swift">
+   </FileRef>
+   <FileRef
+      location = "group:Int.swift">
+   </FileRef>
+   <FileRef
+      location = "group:String.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UICollectionView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UICollectionViewCell.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UIColor.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UIImage.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UITableView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UITableViewCell.swift">
+   </FileRef>
+   <Group
+      location = "container:"
+      name = "New Group">
+   </Group>
+   <FileRef
+      location = "group:UITextView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:UIView.swift">
+   </FileRef>
+   <FileRef
+      location = "group:/Users/iikhsan/Documents/Project_ios/AppForSchool/AppForSchool/Classes/UIViewController.swift">
+   </FileRef>
+   <FileRef
       location = "self:AppForSchool.xcodeproj">
    </FileRef>
 </Workspace>
