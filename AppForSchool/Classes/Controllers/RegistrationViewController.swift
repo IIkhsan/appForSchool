@@ -16,16 +16,28 @@ class RegistrationViewController: UIViewController {
     @IBOutlet weak var replayPasswordTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var firstNameTextField : SkyFloatingLabelTextField!
     @IBOutlet weak var lastNameTextField : SkyFloatingLabelTextField!
+    @IBOutlet weak var schoolListPicker : UIPickerView!
+    @IBOutlet weak var teacherListPicker : UIPickerView!
     
     lazy var services = APIServices()
+    var schoolsList = [School]()
+    let teacher = ["teacher" ,"assistant_principal", "principal"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "Save", style: .done, target: self, action: #selector(tapToEnter(_:))), animated: true)
+        services.getAllSchools { (schools, error) in
+            if let error = error {
+                self.presentAlert(withTitle: "Error", message: "\(error)")
+            } else {
+                self.schoolsList = schools!
+                self.schoolListPicker.reloadAllComponents()
+            }
+        }
     }
     
-    @IBAction func tapToEnter(_ sender : Any) {
-        registrationUser(email: emailTextField.text!, password: passwordTextField.text!, replayPassword: replayPasswordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, patronymic: "Otsosyn", userType: "teacher", schoolID: 1)
+    @objc func tapToEnter(_ sender : Any) {
+        registrationUser(email: emailTextField.text!, password: passwordTextField.text!, replayPassword: replayPasswordTextField.text!, firstName: firstNameTextField.text!, lastName: lastNameTextField.text!, patronymic: "", userType: teacher[teacherListPicker.selectedRow(inComponent: 0)], schoolID: schoolsList[schoolListPicker.selectedRow(inComponent: 0)].id)
     }
     
     func registrationUser(email: String, password: String, replayPassword: String, firstName: String, lastName: String, patronymic: String, userType: String, schoolID: Int) {
@@ -60,6 +72,39 @@ class RegistrationViewController: UIViewController {
         presentAlert(withTitle: "Password do not match", message: "Please, enter the same password")
         return false
     }
+}
+
+extension RegistrationViewController : UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        switch pickerView {
+        case schoolListPicker:
+            return 1
+        case teacherListPicker:
+            return 1
+        default:
+            return 0
+        }
+    }
     
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch pickerView {
+        case schoolListPicker:
+            return schoolsList.count
+        case teacherListPicker:
+            return teacher.count
+        default:
+            return 0
+        }
+    }
     
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch pickerView {
+        case schoolListPicker:
+            return schoolsList[row].name
+        case teacherListPicker:
+            return teacher[row]
+        default:
+            return "No"
+        }
+    }
 }

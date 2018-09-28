@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EditSchoolViewController" customModule="AppForSchool" customModuleProvider="target">
+            <connections>
+                <outlet property="textField" destination="xeG-jB-lV4" id="C3V-Ud-Yev"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xeG-jB-lV4">
+                    <rect key="frame" x="26" y="76" width="323" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vk-Il-Fl8">
+                    <rect key="frame" x="155.5" y="179" width="64" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="Bnm-T4-Axw"/>
+                        <constraint firstAttribute="width" constant="64" id="PId-5s-yza"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="saveSchool:" destination="-1" eventType="touchUpInside" id="vcE-jN-6kl"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0Vk-Il-Fl8" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="1xN-D7-PNM"/>
+                <constraint firstItem="xeG-jB-lV4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="26" id="FVT-is-D7A"/>
+                <constraint firstItem="xeG-jB-lV4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="MnY-Wq-Xi1"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="xeG-jB-lV4" secondAttribute="trailing" constant="26" id="fKs-61-nGd"/>
+                <constraint firstItem="0Vk-Il-Fl8" firstAttribute="top" secondItem="xeG-jB-lV4" secondAttribute="bottom" constant="73" id="xCk-7u-ltk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+        </view>
+    </objects>
+</document>

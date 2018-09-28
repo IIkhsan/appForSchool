@@ -337,43 +337,47 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hfL-Lj-fCP">
-                                <rect key="frame" x="100" y="402" width="175" height="56"/>
-                                <color key="backgroundColor" red="0.9408223121" green="0.99348045279999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pBI-uR-X9V">
+                                <rect key="frame" x="0.0" y="386" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="CQg-TC-v3J"/>
+                                    <constraint firstAttribute="height" constant="80" id="Xcn-D7-dW0"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="ENTER">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="8"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="tapToEnter:" destination="hFH-TG-jaI" eventType="touchUpInside" id="tLS-sv-920"/>
-                                    <action selector="tapToEnterButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vGG-Fg-U3P"/>
+                                    <outlet property="dataSource" destination="hFH-TG-jaI" id="iMA-Tn-LBf"/>
+                                    <outlet property="delegate" destination="hFH-TG-jaI" id="GNG-bz-OIo"/>
                                 </connections>
-                            </button>
+                            </pickerView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c4J-go-KlE">
+                                <rect key="frame" x="0.0" y="474" width="375" height="80"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Pvm-I1-0LR"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="hFH-TG-jaI" id="Zx1-df-UqC"/>
+                                    <outlet property="delegate" destination="hFH-TG-jaI" id="FXu-9Y-uOO"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pBI-uR-X9V" firstAttribute="trailing" secondItem="3bS-pD-ArY" secondAttribute="trailing" id="10G-AT-mg1"/>
                             <constraint firstItem="393-b5-OxV" firstAttribute="trailing" secondItem="65n-FI-Ega" secondAttribute="trailing" id="2JK-Vb-kwz"/>
                             <constraint firstItem="HVv-PX-hmX" firstAttribute="top" secondItem="kOA-aL-6yQ" secondAttribute="bottom" constant="8" id="3zY-Oe-mnB"/>
                             <constraint firstItem="65n-FI-Ega" firstAttribute="leading" secondItem="HVv-PX-hmX" secondAttribute="leading" id="5Ui-dy-YSP"/>
                             <constraint firstItem="kOA-aL-6yQ" firstAttribute="top" secondItem="BbA-Qt-IZN" secondAttribute="bottom" constant="56" id="8Y8-XI-uZR"/>
                             <constraint firstItem="3bS-pD-ArY" firstAttribute="trailing" secondItem="kOA-aL-6yQ" secondAttribute="trailing" constant="16" id="CMn-e4-75a"/>
-                            <constraint firstItem="hfL-Lj-fCP" firstAttribute="top" secondItem="mej-be-Jah" secondAttribute="bottom" constant="24" id="Dk2-tU-IuT"/>
+                            <constraint firstItem="c4J-go-KlE" firstAttribute="top" secondItem="pBI-uR-X9V" secondAttribute="bottom" constant="8" id="EKX-Vq-KiE"/>
                             <constraint firstItem="BbA-Qt-IZN" firstAttribute="top" secondItem="3bS-pD-ArY" secondAttribute="top" constant="16" id="FTy-Y6-Yf3"/>
+                            <constraint firstItem="pBI-uR-X9V" firstAttribute="leading" secondItem="3bS-pD-ArY" secondAttribute="leading" id="GFY-yu-iPm"/>
                             <constraint firstItem="BbA-Qt-IZN" firstAttribute="leading" secondItem="3bS-pD-ArY" secondAttribute="leading" constant="16" id="GoM-QG-E4j"/>
                             <constraint firstItem="65n-FI-Ega" firstAttribute="trailing" secondItem="HVv-PX-hmX" secondAttribute="trailing" id="Jjt-j0-gqd"/>
                             <constraint firstItem="HVv-PX-hmX" firstAttribute="trailing" secondItem="kOA-aL-6yQ" secondAttribute="trailing" id="PEe-fc-gYB"/>
                             <constraint firstItem="HVv-PX-hmX" firstAttribute="height" secondItem="kOA-aL-6yQ" secondAttribute="height" id="Tr1-TU-P9H"/>
                             <constraint firstItem="3bS-pD-ArY" firstAttribute="trailing" secondItem="BbA-Qt-IZN" secondAttribute="trailing" constant="16" id="VFD-U3-GJL"/>
                             <constraint firstItem="65n-FI-Ega" firstAttribute="height" secondItem="kOA-aL-6yQ" secondAttribute="height" id="WfM-t6-smH"/>
-                            <constraint firstItem="3bS-pD-ArY" firstAttribute="trailing" secondItem="hfL-Lj-fCP" secondAttribute="trailing" constant="100" id="dZR-9h-cuK"/>
+                            <constraint firstItem="c4J-go-KlE" firstAttribute="trailing" secondItem="3bS-pD-ArY" secondAttribute="trailing" id="ZTV-rX-nqB"/>
                             <constraint firstItem="HVv-PX-hmX" firstAttribute="leading" secondItem="kOA-aL-6yQ" secondAttribute="leading" id="dsr-eb-vf5"/>
                             <constraint firstItem="mej-be-Jah" firstAttribute="leading" secondItem="393-b5-OxV" secondAttribute="leading" id="gQR-IF-hnS"/>
                             <constraint firstItem="393-b5-OxV" firstAttribute="leading" secondItem="65n-FI-Ega" secondAttribute="leading" id="i5J-Vw-q6B"/>
@@ -381,10 +385,11 @@
                             <constraint firstItem="393-b5-OxV" firstAttribute="top" secondItem="65n-FI-Ega" secondAttribute="bottom" constant="8" id="jg8-xE-chf"/>
                             <constraint firstItem="mej-be-Jah" firstAttribute="height" secondItem="kOA-aL-6yQ" secondAttribute="height" id="o9G-J3-Eut"/>
                             <constraint firstItem="kOA-aL-6yQ" firstAttribute="leading" secondItem="3bS-pD-ArY" secondAttribute="leading" constant="16" id="qOE-qm-drt"/>
-                            <constraint firstItem="hfL-Lj-fCP" firstAttribute="leading" secondItem="3bS-pD-ArY" secondAttribute="leading" constant="100" id="sp3-oR-8Dn"/>
                             <constraint firstItem="mej-be-Jah" firstAttribute="top" secondItem="393-b5-OxV" secondAttribute="bottom" constant="8" id="uzV-GM-UXL"/>
                             <constraint firstItem="393-b5-OxV" firstAttribute="height" secondItem="kOA-aL-6yQ" secondAttribute="height" id="vX8-er-2XF"/>
                             <constraint firstItem="65n-FI-Ega" firstAttribute="top" secondItem="HVv-PX-hmX" secondAttribute="bottom" constant="8" id="wt5-Eu-geO"/>
+                            <constraint firstItem="pBI-uR-X9V" firstAttribute="top" secondItem="mej-be-Jah" secondAttribute="bottom" constant="8" id="xRa-pk-gxY"/>
+                            <constraint firstItem="c4J-go-KlE" firstAttribute="leading" secondItem="3bS-pD-ArY" secondAttribute="leading" id="y2e-qz-Wm1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="3bS-pD-ArY"/>
                     </view>
@@ -394,6 +399,8 @@
                         <outlet property="lastNameTextField" destination="65n-FI-Ega" id="jpX-vJ-bfc"/>
                         <outlet property="passwordTextField" destination="393-b5-OxV" id="aou-dr-tUl"/>
                         <outlet property="replayPasswordTextField" destination="mej-be-Jah" id="742-PZ-gUo"/>
+                        <outlet property="schoolListPicker" destination="pBI-uR-X9V" id="pcB-1Q-33E"/>
+                        <outlet property="teacherListPicker" destination="c4J-go-KlE" id="1SX-1m-VtE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QlF-Bl-HOl" userLabel="First Responder" sceneMemberID="firstResponder"/>

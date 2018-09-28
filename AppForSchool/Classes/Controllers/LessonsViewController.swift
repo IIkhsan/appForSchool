@@ -14,30 +14,26 @@ class LessonsViewController: UIViewController {
     var schoolID : Int?
     var lessons = [Lesson]()
     lazy var service = APIServices()
-    
-
-    var addButton: UIBarButtonItem = UIBarButtonItem(title: "New", style: .done, target: self, action: #selector(newLesson))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        addButton.tintColor = .white
-        navigationItem.rightBarButtonItem = addButton
-        var token = UserDefaults.standard.string(forKey: "token")
-        token = "HohPynyWQNjQsfcEYUf2dJKy"
-        service.getAllLessons(schoolID:  nil, authorization: token!) { (lessons, error) in
+        navigationItem.setRightBarButton(UIBarButtonItem(title: "New lesson", style: .done, target: self, action: #selector(newLesson)), animated: true)
+        navigationItem.rightBarButtonItem?.tintColor = .white
+        service.getAllLessons(schoolID: schoolID) { (lessons, error) in
             if let error = error {
                 self.presentAlert(withTitle: "Error", message: "\(error)")
             } else {
                 self.lessons = lessons!
+                print(lessons)
                 self.tableView.reloadData()
             }
         }
     }
     
     @objc func newLesson() {
-        let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "AddNewLesson")
-        navigationController?.pushViewController(vc, animated: true)
+        let vc = CreateLessonViewController(nibName: "CreateLessonViewController", bundle: nil)
+        vc.schoolID = schoolID
+        self.navigationController?.pushViewController(vc, animated: true)
     }
 }
 
@@ -58,7 +54,8 @@ extension LessonsViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "Tests")
+        let vc = storyboard.instantiateViewController(withIdentifier: "Tests") as! TestsViewController
+        vc.criteryID = lessons[indexPath.row].id
         navigationController?.pushViewController(vc, animated: true)
     }
 }

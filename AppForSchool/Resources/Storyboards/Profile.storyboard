@@ -230,6 +230,12 @@
                                     <outlet property="delegate" destination="hsD-wM-vsw" id="a4L-Ax-ZQ7"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bD4-NU-qCT">
+                                <rect key="frame" x="16" y="119" width="43.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -238,17 +244,23 @@
                             <constraint firstItem="2P0-06-i3H" firstAttribute="top" secondItem="FgC-BY-KGz" secondAttribute="bottom" constant="8" id="EQr-Jb-TJi"/>
                             <constraint firstItem="FgC-BY-KGz" firstAttribute="leading" secondItem="iTB-F7-lXz" secondAttribute="leading" constant="16" id="FhP-Zw-8ts"/>
                             <constraint firstItem="iTB-F7-lXz" firstAttribute="trailing" secondItem="jfz-9X-RX6" secondAttribute="trailing" id="RPw-XW-Kd5"/>
-                            <constraint firstItem="jfz-9X-RX6" firstAttribute="top" secondItem="2P0-06-i3H" secondAttribute="bottom" constant="48" id="S0R-cK-cCY"/>
+                            <constraint firstItem="jfz-9X-RX6" firstAttribute="top" secondItem="bD4-NU-qCT" secondAttribute="bottom" constant="19" id="cJP-nW-Kia"/>
                             <constraint firstItem="FgC-BY-KGz" firstAttribute="top" secondItem="EyD-2r-o7e" secondAttribute="bottom" constant="8" id="e1i-BG-vRV"/>
                             <constraint firstItem="jfz-9X-RX6" firstAttribute="leading" secondItem="iTB-F7-lXz" secondAttribute="leading" id="hxH-vI-pPS"/>
                             <constraint firstItem="EyD-2r-o7e" firstAttribute="leading" secondItem="iTB-F7-lXz" secondAttribute="leading" constant="16" id="pZj-ls-cI5"/>
+                            <constraint firstItem="bD4-NU-qCT" firstAttribute="top" secondItem="2P0-06-i3H" secondAttribute="bottom" constant="8" id="qNE-zh-EKL"/>
+                            <constraint firstItem="bD4-NU-qCT" firstAttribute="leading" secondItem="2P0-06-i3H" secondAttribute="leading" id="x08-6u-xZ1"/>
                             <constraint firstItem="2P0-06-i3H" firstAttribute="leading" secondItem="iTB-F7-lXz" secondAttribute="leading" constant="16" id="zXy-50-5G1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="iTB-F7-lXz"/>
                     </view>
                     <navigationItem key="navigationItem" id="UF0-0u-aG3"/>
                     <connections>
-                        <outlet property="tableVIew" destination="jfz-9X-RX6" id="Y8R-nA-f5R"/>
+                        <outlet property="firstNameLabel" destination="EyD-2r-o7e" id="d3q-VR-bac"/>
+                        <outlet property="lastNameLabel" destination="FgC-BY-KGz" id="xD9-ua-SVF"/>
+                        <outlet property="patronymiclabel" destination="2P0-06-i3H" id="3K4-J4-sxJ"/>
+                        <outlet property="tableView" destination="jfz-9X-RX6" id="4gw-4f-rTE"/>
+                        <outlet property="userTypeLabel" destination="bD4-NU-qCT" id="qfy-Nc-N8s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jlI-LZ-pJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -299,7 +311,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pku-sC-e3a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1844" y="-713.79310344827593"/>
+            <point key="canvasLocation" x="2713" y="-762"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="8KK-SS-HnA">
@@ -340,6 +352,35 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zhy-Fl-YZT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="232.80000000000001" y="-47.226386806596707"/>
+        </scene>
+        <!--Create School View Controller-->
+        <scene sceneID="lao-o0-jw3">
+            <objects>
+                <viewController id="uuU-lY-yN7" customClass="CreateSchoolViewController" customModule="AppForSchool" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oT8-VE-VDL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="OAp-o8-I6S" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
+                                <rect key="frame" x="139" y="80" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ofi-z7-RaI">
+                                <rect key="frame" x="164" y="153" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="TgV-fu-auz"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6aR-yV-ark" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="720"/>
         </scene>
         <!--Profile-->
         <scene sceneID="cHd-jA-Udk">

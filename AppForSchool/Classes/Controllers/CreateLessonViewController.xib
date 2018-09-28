@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CreateLessonViewController" customModule="AppForSchool" customModuleProvider="target">
+            <connections>
+                <outlet property="endDatePickerView" destination="w0e-FG-BKn" id="k0B-JR-wgv"/>
+                <outlet property="lessonNameTextField" destination="QDF-vY-RCh" id="PwO-sZ-I0k"/>
+                <outlet property="startDatePickerView" destination="9zl-ai-Lfi" id="b7l-s3-dpL"/>
+                <outlet property="teacherPicker" destination="xh0-bN-kEi" id="YNx-W2-2fW"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-vY-RCh">
+                    <rect key="frame" x="167" y="76" width="192" height="30"/>
+                    <nil key="textColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="9zl-ai-Lfi">
+                    <rect key="frame" x="0.0" y="149" width="375" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="fNn-8h-tqx"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="554323503.02166998">
+                        <!--2018-07-26 18:45:03 +0000-->
+                    </date>
+                </datePicker>
+                <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="w0e-FG-BKn">
+                    <rect key="frame" x="0.0" y="272" width="375" height="86"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="ZGF-9R-x2z"/>
+                    </constraints>
+                    <date key="date" timeIntervalSinceReferenceDate="554323503.02166998">
+                        <!--2018-07-26 18:45:03 +0000-->
+                    </date>
+                </datePicker>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название урока" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZAb-g3-AHA">
+                    <rect key="frame" x="16" y="76" width="129" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время начала урока" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eaq-zd-egB">
+                    <rect key="frame" x="16" y="120" width="164" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время окончания" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HzE-kC-lAm">
+                    <rect key="frame" x="16" y="243" width="141" height="21"/>
+                    <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <pickerView clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xh0-bN-kEi">
+                    <rect key="frame" x="0.0" y="394" width="375" height="86"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="86" id="EQr-Un-DGn"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wVq-QC-CbG"/>
+                        <outlet property="delegate" destination="-1" id="HDu-F1-XIw"/>
+                    </connections>
+                </pickerView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Преподаватель" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JyY-Zf-9US">
+                    <rect key="frame" x="16" y="366" width="123.5" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="JyY-Zf-9US" firstAttribute="leading" secondItem="HzE-kC-lAm" secondAttribute="leading" id="3T0-x9-HAa"/>
+                <constraint firstItem="JyY-Zf-9US" firstAttribute="top" secondItem="w0e-FG-BKn" secondAttribute="bottom" constant="8" id="3ZF-F7-Rbs"/>
+                <constraint firstItem="ZAb-g3-AHA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="7ea-dU-06G"/>
+                <constraint firstItem="w0e-FG-BKn" firstAttribute="top" secondItem="HzE-kC-lAm" secondAttribute="bottom" constant="8" id="AoG-Pq-a88"/>
+                <constraint firstItem="xh0-bN-kEi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="JpB-KO-KPC"/>
+                <constraint firstItem="w0e-FG-BKn" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="S8E-L1-zRT"/>
+                <constraint firstItem="9zl-ai-Lfi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SdE-k0-rgm"/>
+                <constraint firstItem="ZAb-g3-AHA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="YxA-a5-TnO"/>
+                <constraint firstItem="Eaq-zd-egB" firstAttribute="leading" secondItem="ZAb-g3-AHA" secondAttribute="leading" id="aZH-WM-27I"/>
+                <constraint firstItem="QDF-vY-RCh" firstAttribute="leading" secondItem="ZAb-g3-AHA" secondAttribute="trailing" constant="22" id="ebe-mi-eXI"/>
+                <constraint firstItem="9zl-ai-Lfi" firstAttribute="top" secondItem="Eaq-zd-egB" secondAttribute="bottom" constant="8" id="g7J-ay-q71"/>
+                <constraint firstItem="HzE-kC-lAm" firstAttribute="top" secondItem="9zl-ai-Lfi" secondAttribute="bottom" constant="8" id="hpJ-rT-yoC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QDF-vY-RCh" secondAttribute="trailing" constant="16" id="iIA-Sp-rFW"/>
+                <constraint firstItem="w0e-FG-BKn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="jLe-NO-c7q"/>
+                <constraint firstItem="9zl-ai-Lfi" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="l7Y-u0-388"/>
+                <constraint firstItem="QDF-vY-RCh" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="56" id="mYe-cY-LbQ"/>
+                <constraint firstItem="HzE-kC-lAm" firstAttribute="leading" secondItem="Eaq-zd-egB" secondAttribute="leading" id="s4L-qg-Sj8"/>
+                <constraint firstItem="xh0-bN-kEi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="vRu-ho-Iem"/>
+                <constraint firstItem="Eaq-zd-egB" firstAttribute="top" secondItem="ZAb-g3-AHA" secondAttribute="bottom" constant="23" id="vWL-LF-9XU"/>
+                <constraint firstItem="xh0-bN-kEi" firstAttribute="top" secondItem="w0e-FG-BKn" secondAttribute="bottom" constant="36" id="ySa-L0-0Qs"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="33.5" y="78.5"/>
+        </view>
+    </objects>
+</document>

@@ -16,8 +16,7 @@ class SchoolsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let token = UserDefaults.standard.string(forKey: "token")
-        services.getAllSchools(header: token!) { (schools, error) in
+        services.getAllSchools() { (schools, error) in
             if let error = error {
                 self.presentAlert(withTitle: "Error", message: "\(error)")
             } else {

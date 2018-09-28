@@ -35,11 +35,12 @@ class AuthorizationViewController: UIViewController {
             email: email,
             password: password
             ) { (token, error) in
-                if let error = error {
-                    self.presentAlert(withTitle: "Error", message: "Account not found")
+                if error != nil {
+                    self.presentAlert(withTitle: "Ошибка", message: "Ошибка авторизации")
                 } else {
                     UserDefaults.standard.set(token?.token, forKey: "token")
                     UserDefaults.standard.set(token?.id, forKey: "uid")
+                    UserDefaults.standard.synchronize()
                     self.navigateToProfileViewController()
                 }
             }
